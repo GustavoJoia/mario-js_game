@@ -4,6 +4,8 @@ let score = document.querySelector('.score').children[0]
 score.textContent = 0
 let points = +score.textContent
 
+import gameOver from "./game-over.js"
+
 export default function gameLoop(){
 
     let scoreLoop
@@ -45,22 +47,7 @@ export default function gameLoop(){
     
         if(pipePosition <= 75 && pipePosition > 10 && marioPosition <= 58){
     
-            pipe.style.animation = 'none'
-            pipe.style.left = `${pipePosition}px`
-    
-            mario.style.animation = 'none'
-            mario.style.bottom = `${marioPosition}px`
-            mario.src = './img/game-over.png'
-            mario.style.width = '65px'
-            mario.style.marginLeft = '30px'
-    
-            clearInterval(loop)
-            clearInterval(scoreLoop)
-    
-            setInterval(()=>{
-                mario.classList.add('game-over')
-                mario.style.bottom = '-10em'
-            },1000)
+            gameOver(pipePosition, marioPosition, loop, scoreLoop)
     
         }
     

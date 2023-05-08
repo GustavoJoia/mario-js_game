@@ -1,0 +1,47 @@
+* {
+    font-family: 'Arial';
+}
+
+.start-container{
+    background-color: #f0f0f0;
+    position: absolute;
+    border-radius: 10%;
+    width: 25%;
+    height: 50%;
+    display: grid;
+    place-content: center;
+    border: 2px solid #000;
+}
+
+.start-container div{
+    display: inline-flex;
+    align-items: baseline;
+    width: 100%;
+}
+
+.start-container div h1{
+    color: rgb(154, 4, 4);
+    margin-right: 5%;
+}
+
+.start-container div h2 {
+    color: rgb(60, 139, 60);
+}
+
+.start-container div h2 span {
+    color: rgb(2, 69, 2);
+}
+
+.play-game{
+    background-color: rgb(21, 86, 21);
+    border-radius: 5%;
+    width: 12%;
+}
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 48
+}

@@ -4,12 +4,6 @@
     box-sizing: border-box;
 }
 
-body{
-    display:flex;
-    align-content: center;
-    justify-content: center;
-}
-
 .game-container{
     width: 100%;
     height: 24em;
@@ -50,11 +44,20 @@ p{
     bottom: 0;
 }
 
-.clouds{
+.clouds.one, .clouds.two{
     top: 3em;
     position: absolute;
     width: 300px;
-    animation: clouds-animation 10s infinite linear;
+    right: -300px;
+}
+
+.clouds.one{
+    animation: clouds1-animation 10s infinite linear;
+}
+
+.clouds.two{
+    animation: clouds2-animation 10s infinite linear;
+    animation-delay: 5s;
 }
 
 .jump{
@@ -77,9 +80,12 @@ p{
 
 @keyframes jump {
     0%{
+        bottom: -0.5em;
+    }
+    5%{
         bottom: 0;
     }
-    40%,70%{
+    40%,90%{
         bottom: 5em;
     }
     100%{
@@ -99,7 +105,16 @@ p{
     }
 }
 
-@keyframes clouds-animation{
+@keyframes clouds1-animation{
+    from{
+        right: -300px;
+    }
+    to{
+        right: 100%;
+    }
+}
+
+@keyframes clouds2-animation{
     from{
         right: -300px;
     }
